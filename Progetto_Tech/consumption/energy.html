@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energy Consumption Tracking</title>
+  <link rel="stylesheet" href="energy.css">
+</head>
+<body>
+  <!--Contenuto a sinistra della pagina-->
+  <div class="container">
+    <main class="main-content">
+      <h2>Energy Consumption Tracking</h2>
+      <div class="tracker">
+        <label for="appliance-name">Appliance Name</label>
+        <input type="text" id="appliance-name" placeholder="e.g washing machine">
+        
+        <label for="usage-hours">Usage (hours): <span id="hours-output">3</span></label>
+        <input type="range" id="usage-hours" min="1" max="24" value="3" oninput="updateUsage(this.value)">
+        
+        <div class="button-group">
+          <!-- Contenitore per il giorno -->
+          <div class="button-container">
+          <label for="day-button" class="button-label">Day</label>
+          <button class="round-button" id="day-button" onclick="toggleDayMenu()">Monday</button>
+          </div>
+          
+          <!-- Contenitore per l'efficienza -->
+          <div class="button-container">
+          <label for="efficiency-button" class="button-label">Efficiency</label>
+          <button class="round-button efficiency-button" id="efficiency-button" onclick="toggleClassMenu()">A</button>
+          </div>
+        </div>
+        
+        <!-- Menu di selezione per i giorni della settimana -->
+        <div class="day-menu" id="day-menu" style="display: none;">
+          <ul>
+            <li onclick="selectDay('Monday')">Monday</li>
+            <li onclick="selectDay('Tuesday')">Tuesday</li>
+            <li onclick="selectDay('Wednesday')">Wednesday</li>
+            <li onclick="selectDay('Thursday')">Thursday</li>
+            <li onclick="selectDay('Friday')">Friday</li>
+            <li onclick="selectDay('Saturday')">Saturday</li>
+            <li onclick="selectDay('Sunday')">Sunday</li>
+          </ul>
+        </div>
+        
+        
+        <!-- Menu di selezione per la classe -->
+        <div class="efficiency-menu" id="efficiency-menu" style="display: none;">
+          <ul>
+            <li onclick="selectEfficiency('A')">A</li>
+            <li onclick="selectEfficiency('B')">B</li>
+            <li onclick="selectEfficiency('C')">C</li>
+            <li onclick="selectEfficiency('D')">D</li>
+            <li onclick="selectEfficiency('E')">E</li>
+            <li onclick="selectEfficiency('F')">F</li>
+          </ul>
+        </div>
+        
+        <button onclick="addAppliance()">Add Appliance</button>
+      </div>
+      
+      <div class="appliance-list">
+        <h3>Overview</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Appliance</th>
+              <th>Usage (hours)</th>
+              <th>Day</th>
+              <th>Efficiency</th>
+              <th>Energy (kWh)</th>
+            </tr>
+          </thead>
+          <tbody id="appliance-table">
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+
+
+<!--Riga verticale di separazione-->
+<div class="separator"></div>
+
+
+
+<!--Contenuto a destra della schermata-->
+<div class="right-content">
+  <h3 class="impact-title">Your Impact</h3>
+  <div class="circular-chart">
+    <div class="circle">
+      <div class="mask half" style="background-color: #4aa463;">
+        <div class="fill fix" style="background-color: #ffffff;"></div>
+      </div>
+      <!-- Continua per altri segmenti -->
+      <div class="inset">
+        <div class="percentage">50%</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hSeparator"></div>
+
+  <div class="weekly-insights">
+    <h3 class="insights-title">Last week</h3>
+    <canvas id="weeklyChart" width="100" height="100"></canvas>
+  </div>
+</div>
+
+
+
+<!--Libreria JavaScript Chart.js per il grafico settimanale-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="energy.js"></script>
+
+</body>
+</html>

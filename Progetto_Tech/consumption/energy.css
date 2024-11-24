@@ -1,0 +1,380 @@
+/* verde bottoni: 4aa463 */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+}
+
+/*stile titolo*/
+h2 {
+  text-align: center;
+  margin-top: 20px; /* Aggiungi uno spazio sopra */
+  font-size: 24px; /* Dimensione del testo */
+  color: #333; /* Colore del testo */
+}
+
+.app-container {
+  display: flex;
+  width: 100%;
+}
+
+/* contenitore principale, intera schermata */
+.container {
+  /*border: 2px solid red;*/ /*Per testare e guardare la grandezza del container principale*/
+  max-width: 1045px; /*larghezza massima senza grafici a destra*/
+}
+
+.separator {
+  width: 3px;
+  background-color: #f5f5f5;
+  height: 100%;
+  margin-left: 55px;
+}
+
+
+.hSeparator {
+  width: 100%;
+  background-color: #f5f5f5;
+  height: 3px;
+}
+
+
+.main-content {
+  padding: 20px;
+  width: 100%;
+}
+  
+
+/* card grigia background */
+.tracker {
+  background-color: #f5f5f5;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 102%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tracker label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.tracker input, .tracker button {
+  display: block;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+}
+
+.tracker button {
+  background-color: #007bff;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.button-group {
+  display: flex;
+  gap: 60px; /* spazio tra i bottoni */
+  margin-bottom: 20px; /* padding sotto ai bottoni */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column; /* Dispone il testo sopra il bottone */
+  align-items: center; /* Centra gli elementi */
+}
+
+.button-label {
+  font-size: 16px;
+  font-weight: regular;
+  margin-top: 5px; /* spazio tra [testo e bottone] e la roba sotto */
+  color: #333; /* Colore del testo */
+}
+
+
+/* Stile base per i bottoni */
+.round-button, .efficiency-button {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Animazione quando il mouse passa sopra il bottone */
+.round-button:hover, .efficiency-button:hover {
+  transform: scale(1.07); /* Aumenta leggermente le dimensioni */
+  background-color: #366534; /* Cambia il colore di sfondo */
+}
+
+.efficiency-button {
+  position: relative;
+}
+
+/*caratteristiche bottone efficiency*/
+#efficiency-button {
+  width: 110px;
+  height: 70px;
+  border-radius: 60px;
+  background-color: #4aa463;
+  color: white; /* Colore testo */
+  font-size: 1.3em; /* Dimensione del testo */
+  cursor: pointer;
+}
+
+.efficiency-menu {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100px;
+  z-index: 100;
+  top: 53%; /* altezza class menu */
+  left: 46%; /* dx/sx class menu */
+}
+
+.efficiency-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.efficiency-menu li {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.efficiency-menu li:last-child {
+  border-bottom: none;
+}
+
+.efficiency-menu li:hover {
+  background-color: #4aa463;
+  color: white;
+}
+
+.day-menu {
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 150px;
+  z-index: 100;
+  top: 53%; /* altezza day menu */
+  left: 34%; /* dx/sx day menu */
+}
+
+.day-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.day-menu li {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.day-menu li:hover {
+  background-color: #4aa463;
+  color: white;
+}
+
+
+/*caratteristiche del bottone Day*/
+#day-button {
+  width: 110px;
+  height: 70px;
+  border-radius: 60px;
+  background-color: #4aa463;
+  color: white; /* Colore testo */
+  font-size: 1em; /* Dimensione del testo */
+  cursor: pointer;
+}
+
+/* caratteristiche barra 'Appliance name' */
+#appliance-name {
+  width: 98%;
+  padding: 10px; /* Spazio interno per migliorare l'aspetto */
+  border: 1px solid #ccc; /* Bordo per coerenza estetica */
+  border-radius: 50px; /* Arrotondamento come gli altri input */
+  font-size: 18px;
+}
+
+
+.appliance-list table {
+  width: 100%;
+  border-collapse: separate;
+  margin: auto; 
+  /*border-spacing: 5px;  Spazio tra le celle */
+}
+
+
+/*caratteristiche bottone Add Appliance*/
+button[onclick="addAppliance()"] {
+  width: 1025px;
+  background-color: #4aa463;
+  color: white;
+  font-size: 1em;
+  border-radius: 30px;
+  border: none; /* Rimuovi il bordo */
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Aggiungi transizioni per trasformazione e colore di sfondo */
+}
+
+/*Animazione bottone Add Appliance*/
+button[onclick="addAppliance()"]:hover {
+  transform: scale(1.); /* Aumenta leggermente le dimensioni */
+  background-color: #357d4a; /* Cambia il colore di sfondo per un verde più scuro */
+}
+
+
+/* bordi Overview */
+.appliance-list th, .appliance-list td {
+  width: 20%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+/* caratteristiche Overview */
+.appliance-list th {
+  background-color: #357d4a;
+  color: white;
+}
+
+
+/*STILE SLIDER*/
+#usage-hours {
+  width: 100%;
+  max-width: 1001px;
+  height: 20px;
+  appearance: none; /* Rimuove lo stile predefinito */
+  background-color: #ffffff;
+  border-radius: 25px;
+  outline: none; /* Rimuove il bordo di selezione */
+  cursor: pointer;
+}
+
+#usage-hours::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #4aa463; /* Colore del cursore */
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -9px; /* Allinea verticalmente il cerchietto */
+}
+
+#usage-hours::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px; /* Altezza della riga */
+  background-color: #ccc; /* Colore della riga */
+  border-radius: 8px; /* Arrotondamento */
+}
+
+
+
+
+
+
+.impact-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 40px;
+}
+
+
+/* progress circle */
+.circular-chart {
+  border: 2px solid #ccc;
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 10px 30px 30px 55px;
+  border-radius: 50%;
+}
+
+
+.circle .mask, .circle .fill {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+
+.full, .fill {
+  clip: rect(0px, 100px, 200px, 0px);
+  background-color: #4aa463;
+  animation: fill ease-in-out 2s;
+
+}
+
+
+@keyframes fill {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/*cerchio interno*/
+.inset {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  margin: 20px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+
+/*percentuale interna*/
+.percentage {
+  font-size: 3em;
+  color: #666;
+}
+
+
+.weekly-insights {
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.insights-title {
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: -10px;
+  color: #333;
+}
+
+/* FASCE RISPARMIO: LUN-VEN: FASCIA A, SAB: FASCIA B, DOM: FASCIA C */
