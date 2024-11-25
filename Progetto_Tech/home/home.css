@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color:#ededed;
+    color: #333;
+  }
+  
+  
+  
+  header {
+    text-align: center;
+    background-color:#4A7352;
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 10px;
+  }
+  
+  .cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .card {
+    flex: 1;
+    background: #E8F2EC;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+  }
+  
+.chart {
+  position: relative;
+  margin: 30px auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(#ccc 0% 100%);
+  display: flex; /* Centra il contenuto */
+  align-items: center;
+  justify-content: center;
+}
+  
+  .chart .circle {
+    position: relative; /* Cambia 'absolute' con 'relative' */
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 130px; /* Stessa dimensione della classe .chart */
+    height: 130px;
+    background-color: #f9f9f9; /* Colore facilmente distinguibile */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black; /* Testo visibile */
+  }
+  
+  .stats button {
+    
+    background-color: #4aa463;
+    color: #fff;
+    border:1px solid black;
+    border-radius: 60px;
+    width: 72px;
+  height: 72px;
+    padding: 10px 20px;
+    cursor: pointer;
+    align-items: center; 
+    justify-content: center;
+    font-size: 30px;
+    margin: 20px;
+    line-height: 0;
+    transition: background-color 0.3s, transform 0.2s;
+    
+  }
+  
+  .stats button:hover {
+
+ 
+    background-color: #4aa463;
+    transform: scale(1.4);  
+  }
+
+  /* Stilizza la scritta "Sfida del giorno" */
+.link-text {
+  text-decoration: none; /* Rimuove la sottolineatura predefinita */
+  color: inherit;        /* Mantiene il colore del testo */
+  position: relative;    /* Necessario per la sottolineatura animata */
+  transition: color 0.3s ease; /* Cambia colore gradualmente */
+}
+
+.link-text:hover {
+  color: #4aa463;; /* Cambia colore della scritta al passaggio del mouse */
+}
+
+/* Aggiunge la sottolineatura animata */
+.link-text::after {
+  content: '';                /* Crea una sottolineatura */
+  display: block;             /* La rende visibile */
+  width: 0;                   /* Larghezza iniziale (per l'animazione) */
+  height: 2px;                /* Spessore della linea */
+  background-color: #4aa463;  /* Colore della sottolineatura */
+  transition: width 0.3s ease; /* Animazione fluida */
+  position: absolute;         /* Posiziona la linea sotto il testo */
+  bottom: 0;                  /* Allinea la linea sotto il testo */
+  left: 0;                    /* Parte da sinistra */
+}
+
+.link-text:hover::after {
+  width: 100%; /* Espande la linea su tutta la larghezza della scritta */
+}
+  
+
+
+
+/* Dashboard per mantenere il contenuto strutturato */
+.dashboard {
+  max-width: 1370px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Stile per le righe */
+h4 {
+  display: flex;
+  align-items: center; /* Centra verticalmente gli elementi */
+  justify-content: center; /* Centra orizzontalmente gli elementi */
+  gap: 10px; /* Spazio tra icona, testo e checkbox */
+  margin-bottom: 20px; /* Spazio tra le righe */
+}
+
+
+/* Contenitore per la checkbox accanto alla scritta */
+h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Spazio tra icona, testo e checkbox */
+}
+
+/* Checkbox nascosta */
+input[type="checkbox"].check-icon {
+  display: none; /* Nasconde la checkbox originale */
+}
+
+/* Checkbox personalizzata */
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  background-color: white; /* Sfondo bianco */
+  border: 2px solid#4aa463; /* Bordo verde */
+  border-radius: 50%; /* Forma circolare */
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  display: inline-block; /* Mantiene la checkbox inlinea con il testo */
+}
+
+/* Mostra la spunta dentro la checkbox quando selezionata */
+input[type="checkbox"]:checked + .custom-checkbox {
+  background-color: #4aa463; /* Cambia colore di sfondo */
+}
+
+input[type="checkbox"]:checked + .custom-checkbox::after {
+  content: '✔';
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+  
