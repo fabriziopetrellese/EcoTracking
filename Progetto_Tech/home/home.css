@@ -84,6 +84,10 @@ body {
     background-color: #4aa463;
     transform: scale(1.4);  
   }
+  .stats-button-link {
+    text-decoration: none; /* Rimuove il sottolineamento */
+    color: inherit; /* Eredita il colore del testo dal bottone, se necessario */
+  }
 
   /* Stilizza la scritta "Sfida del giorno" */
 .link-text {

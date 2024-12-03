@@ -1,0 +1,250 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #E8F2EC;
+  color: #333;
+}
+
+.dashboard {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  background-color: #4A7352;
+  color: white;
+  padding: 10px 0;
+  border-radius: 10px;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.layout {
+display: flex;
+flex-direction: column;  /* Imposta la direzione del layout da orizzontale a verticale */
+gap: 20px;
+margin-top: 20px;
+}
+/* Colonna sinistra (input e lista) */
+.inputs-column {
+  flex: 1;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.add-foods-container {
+  display: flex;
+  gap: 10px;
+}
+
+.input-field {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #4AA463;
+  border-radius: 5px;
+  background-color: white;
+}
+
+  
+.card1, .card2 {
+  background: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+
+.add-button {
+  padding: 10px;
+  font-size: 1.5rem;
+  color: white;
+  background-color: #4AA463;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.add-button:hover {
+  background-color: #4AA463;
+  transform: scale(1.1);
+}
+  /* Gestione del titolo sopra i cerchi */
+h4 {
+  margin-top: 45px; /* Margine superiore per distanziare dal contenuto sopra */
+  margin-bottom: 10px; /* Margine inferiore per distanziare dalla lista */
+  color: black; /* Utilizzo di un colore coerente con il tema */
+  font-size: 1.2rem; /* Dimensione del font adeguata */
+}
+
+.food-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  list-style-type: none;
+  padding: 0;
+}
+
+
+
+.summary-food-list li {
+margin-bottom: 10px;
+list-style-type: none; /* Rimuove i bullet points */
+display: flex;
+align-items: center; /* Allinea verticalmente testo e pulsante */
+}
+
+
+
+
+
+#daily-foods-title {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0; /* Inizia invisibile */
+}
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  border: 2px solid #4A7352;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #4A7352;
+  color: white;
+}
+
+caption {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #333;
+}
+
+
+.food-section {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.food-section h3 {
+  color: #333;
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style-type: none; /* Rimuove i punti elenco */
+}
+
+li {
+  align-items: center;
+  display: flex;
+  margin-right: 25px; /* Distanza tra gli elementi della lista */
+  margin-bottom: 10px; /* Distanza tra le righe quando wrap */
+}
+
+
+.dish-name {
+  display: inline-block; /* Continua a comportarsi come un blocco, permettendo padding e bordi */
+  padding: 5px; /* Riduci il padding per diminuire la larghezza complessiva */
+  border: 2px solid #4AA463; /* Mantiene un bordo solido per il cerchio */
+  border-radius: 50%; /* Mantiene il bordo completamente rotondo */
+  margin-left: 5px; /* Mantiene una distanza dal testo della categoria o dal pulsante di rimozione */
+  text-align: center; /* Mantiene il testo al centro del cerchio */
+  min-width: 20px; /* Riduci o regola per controllare la larghezza minima */
+  height: 20px; /* Riduci per fare il cerchio più stretto */
+  line-height: 20px; /* Allinea il testo verticalmente al centro del cerchio */
+}
+
+
+
+.remove-button {
+  display: inline-flex; /* Usa inline-flex per un migliore controllo dell'allineamento */
+  align-items: center; /* Centra il contenuto verticalmente */
+  justify-content: center; /* Centra il contenuto orizzontalmente */
+  width: 18px; /* Larghezza fissa */
+  height: 18px; /* Altezza fissa */
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 50%; /* Rende il bordo completamente rotondo */
+  cursor: pointer;
+  padding: 0; /* Nessun padding per non spostare il testo */
+  margin-right: -2px; /* Ajusta il margine per posizionare il bottone come desiderato */
+  font-size: 12px; /* Ajusta la dimensione del font per assicurarti che il simbolo si adatti bene */
+  line-height: 18px; /* Imposta la line-height uguale all'altezza per centrare verticalmente il testo */
+}
+
+.remove-button:hover {
+  background-color: darkred;
+}
+  
+  
+#first-dish-section {
+  background-color: #fff;  /* Imposta un colore di sfondo bianco o qualsiasi altro colore */
+  border: 2px solid #4AA463;  /* Bordo solido con il colore definito */
+  border-radius: 10px;  /* Bordo arrotondato per dolcezza visiva */
+  padding: 10px;  /* Spazio interno per non sovrapporre il contenuto al bordo */
+  margin-top: 20px;  /* Distanza dal contenuto sopra */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Ombra leggera per profondità visiva */
+}
+  
+  
+#second-dish-section {
+  background-color: #fff;  /* Imposta un colore di sfondo bianco o qualsiasi altro colore */
+  border: 2px solid #4AA463;  /* Bordo solido con il colore definito */
+  border-radius: 10px;  /* Bordo arrotondato per dolcezza visiva */
+  padding: 10px;  /* Spazio interno per non sovrapporre il contenuto al bordo */
+  margin-top: 20px;  /* Distanza dal contenuto sopra */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Ombra leggera per profondità visiva */
+}
+  
+    
+#side-dish-section {
+  background-color: #fff;  /* Imposta un colore di sfondo bianco o qualsiasi altro colore */
+  border: 2px solid #4AA463;  /* Bordo solido con il colore definito */
+  border-radius: 10px;  /* Bordo arrotondato per dolcezza visiva */
+  padding: 10px;  /* Spazio interno per non sovrapporre il contenuto al bordo */
+  margin-top: 20px;  /* Distanza dal contenuto sopra */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Ombra leggera per profondità visiva */
+}
+  
+  
+#dessert-section {
+  background-color: #fff;  /* Imposta un colore di sfondo bianco o qualsiasi altro colore */
+  border: 2px solid #4AA463;  /* Bordo solido con il colore definito */
+  border-radius: 10px;  /* Bordo arrotondato per dolcezza visiva */
+  padding: 10px;  /* Spazio interno per non sovrapporre il contenuto al bordo */
+  margin-top: 20px;  /* Distanza dal contenuto sopra */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Ombra leggera per profondità visiva */
+}

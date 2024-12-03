@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTracking - Foods</title>
+  <link rel="stylesheet" href="foods.css">
+</head>
+<body>
+  <div class="dashboard">
+    <header>
+      <h1>Food Habits</h1>
+      <a href="home.html" class="back-button">⮐ Back</a>
+    </header>
+
+    <!-- Prima Card: Gestione dei pasti -->
+    <div class="card1">
+      <section class="section">
+        <h2>Add First Dish</h2>
+        <div class="add-foods-container">
+          <input type="text" placeholder="e.g., pasta" id="first-dish-input" class="input-field">
+          <button class="add-button" onclick="addFood('first')">+</button>
+        </div>
+      </section>
+      <section class="section">
+        <h2>Add Second Dish</h2>
+        <div class="add-foods-container">
+          <input type="text" placeholder="e.g., steak" id="second-dish-input" class="input-field">
+          <button class="add-button" onclick="addFood('second')">+</button>
+        </div>
+      </section>
+      <section class="section">
+        <h2>Add Side Dish</h2>
+        <div class="add-foods-container">
+          <input type="text" placeholder="e.g., salad" id="side-dish-input" class="input-field">
+          <button class="add-button" onclick="addFood('side')">+</button>
+        </div>
+      </section>
+      <section class="section">
+        <h2>Add Dessert</h2>
+        <div class="add-foods-container">
+          <input type="text" placeholder="e.g., cake" id="dessert-dish-input" class="input-field">
+          <button class="add-button" onclick="addFood('dessert')">+</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Seconda Card: Daily Foods -->
+    <div class="card2">
+      <h2>Daily Foods:</h2>
+      <div class="food-section" id="first-dish-section">
+        <h3>First Dish:</h3>
+        <ul></ul>
+      </div>
+      <div class="food-section" id="second-dish-section">
+        <h3>Second Dish:</h3>
+        <ul></ul>
+      </div>
+      <div class="food-section" id="side-dish-section">
+        <h3>Side Dish:</h3>
+        <ul></ul>
+      </div>
+      <div class="food-section" id="dessert-section">
+        <h3>Dessert:</h3>
+        <ul></ul>
+      </div>
+    </div>
+  </div>
+  <script src="food.js"></script>
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+

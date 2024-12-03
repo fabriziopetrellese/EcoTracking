@@ -4,4 +4,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (progressBar) {
         progressBar.style.width = "70%"; // Simula un valore dinamico
     }
+    
 });
