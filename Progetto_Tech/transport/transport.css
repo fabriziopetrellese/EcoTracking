@@ -1,0 +1,193 @@
+/*colore sfondo #E8F2EC*/
+
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Colore di sfondo generale */
+}
+
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Titolo*/
+header h1 {
+    color: rgb(0, 0, 0);
+    font-size: 30px; /* Dimensione del testo */
+    text-align: center;
+}
+
+/* card grigia */
+.form-container {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* mezzi di trasporto */
+select {
+    font-size: 16px;
+    height: 30px;
+    border: 1px solid #ccc; /* colore bordo campi input */
+}
+
+/* Riduci i margini delle etichette */
+label {
+    display: block;
+    font-weight: bold;
+    padding: 5px; /* Aggiusta il padding se necessario */
+    margin-top: 20px;
+}
+
+
+.form-container form {
+    display: block;
+    width: 100%; 
+}
+
+/* contenitore solo per le due cards */
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px; /* Spazio tra le card */
+}
+
+.transport-entry {
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #E8F2EC;  /* Sfondo leggermente verde per entries */
+    border: 1px solid #D3E2D5; /* Bordo sottile e delicato */
+    border-radius: 8px; /* Angoli arrotondati */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Leggera ombra per un effetto di profondità */
+}
+
+.transport-entry h3 {
+    color: #2E8B57; /* Colore verde scuro per i titoli */
+    font-size: 18px; /* Dimensione appropriata del testo per i titoli */
+    margin: 5px 0; /* Margini per separare i titoli dagli altri elementi */
+}
+
+#classic-transport h3 {
+    margin: auto; /* Imposta il colore del testo a rosso */
+}
+
+/* Card daily transport */
+.daily-transport {
+    display: flex; /* Imposta il contenitore a flex per allineare i figli orizzontalmente */
+    justify-content: space-around; /* Distanzia uniformemente i figli all'interno del contenitore */
+    align-items: baseline; /* Allinea gli elementi all'inizio del contenitore */
+    flex-wrap: wrap;
+    background-color: #f5f5f5; /* Sfondo più neutro per l'intera sezione */
+    border-radius: 10px; /* Angoli arrotondati per la sezione */
+    padding: 20px; /* Padding per creare spazio intorno al contenuto */
+    margin-top: 20px; /* Margine superiore per distanziare dalla sezione precedente */
+}
+
+h2 {
+    color: #000000; /* Colore scuro per il titolo della sezione */
+    text-align: center; /* Allinea al centro il titolo */
+    margin-top: 0;  /* Riduce il margine superiore per il titolo */
+}
+
+
+/* duration e times used */
+input[type="number"] {
+    width: 100%;
+    font-size: 16px; /* Dimensione del testo più grande per migliorare la leggibilità */
+    height: 30px;
+    box-sizing: border-box; /* Include padding e bordi nell'altezza totale */
+    border: 1px solid #ccc; /* Bordi definiti per migliorare l'estetica */
+    border-radius: 7px;
+    margin-top: 3px;
+}
+
+input[type='number'], select {
+    margin-top: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 95%; /* Lascia un po' di spazio ai lati */
+}
+
+/* bottone save */
+button {
+    display: block;
+    width: 100%;
+    margin: 0 auto; /* Centra il bottone orizzontalmente e aggiunge margine superiore */
+    background-color: #4aa463;
+    font-size: 1em;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #357d4a; /* Effetto hover per il bottone */
+}
+
+
+/* modifica tutta la card sinistra (con il contenuto) */
+.form-treInput {
+    background-color: #E8F2EC;
+    border-radius: 10px;
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+input, select, label {
+    padding: 5px; /* Aggiusta il padding se necessario */
+    width: 100%; /* Assicurati che occupino la larghezza completa */
+    box-sizing: border-box;
+}
+
+/* modifica tutta la card destra (con il contenuto) */
+.green-vehicle {
+    background-color: #E8F2EC;
+    border-radius: 10px;
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Stile per l'opzione di default nei menu a tendina */
+select option[disabled] {
+    color: gray; /* Cambia il colore per rendere più chiaro che è un placeholder */
+}
+
+/* Applica lo stile ai select che non hanno ancora un'opzione selezionata */
+select:invalid {
+    color: gray;
+}
+
+/* dettagli veicoli inseriti*/
+.vehicle-details {
+    background-color: #E8F2EC; /* Colore di sfondo */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+}
+
+.detail-value {
+    color: #666;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}

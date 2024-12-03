@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoTracking Transport</title>
+    <link rel="stylesheet" href="transport.css">
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <h1>Transport</h1>
+        </header>
+
+        <div class="form-container">
+            <form id="transportForm">
+                
+                <div class="cards-container">
+                    <div class="form-treInput">
+                        <label for="classicVehicle">Classic vehicle:</label>
+                        <select id="classicVehicle" name="classicVehicle">
+                            <option value="" disabled selected style="display: none;">Select vehicle</option>
+                            <option value="Car">Car</option>
+                            <option value="Motorcycle">Motorcycle</option>
+                            <option value="Train">Train</option>
+                            <option value="Bus">Bus</option>
+                            <option value="Metro">Metro</option>
+                            <option value="Taxi">Taxi</option>
+                            <option value="Airplane">Airplane</option>
+                            <option value="Boat">Boat</option>
+                        </select>
+
+                        <label for="duration">Duration(min):</label>
+                        <input type="number" id="duration" name="duration" min="1">
+
+                        <label for="timesUsed">Times used:</label>
+                        <input type="number" id="timesUsed" name="timesUsed" min="1">
+                    </div>
+
+                    <div class="green-vehicle">
+                        <label for="greenVehicle">Green vehicle:</label>
+                        <select id="greenVehicle" name="greenVehicle">
+                            <option value="" disabled selected style="display: none;">Select vehicle</option>
+                            <option value="Bike">Bike</option>
+                            <option value="Electric Car">Electric car</option>
+                            <option value="Funicular">Funicular</option>
+                            <option value="Tram">Tram</option>
+                            <option value="Electric scooter">Electric scooter</option>
+                        </select>
+
+                        <label for="durationGreen">Duration(min):</label>
+                        <input type="number" id="durationGreen" name="durationGreen" min="1">
+
+                        <label for="timesUsedGreen">Times used:</label>
+                        <input type="number" id="timesUsedGreen" name="timesUsedGreen" min="1">
+                    </div>
+                </div>
+
+                <button type="submit">Save</button>
+            </form>
+        </div>
+
+        <h2>Used today</h2>
+        <div class="daily-transport">
+            <div id="classic-transport">
+                <h3>Classic Vehicle:</h3>
+                <div class="vehicle-details">
+                    <div class="detail-label">Vehicle:</div>
+                    <div class="detail-value" id="classic-vehicle-name"></div>
+                    <div class="detail-label">Duration (min):</div>
+                    <div class="detail-value" id="classic-duration"></div>
+                    <div class="detail-label">Times Used:</div>
+                    <div class="detail-value" id="classic-times-used"></div>
+                </div>
+            </div>
+            <div id="green-transport">
+                <h3>Green Vehicle:</h3>
+                <div class="vehicle-details">
+                    <div class="detail-label">Vehicle:</div>
+                    <div class="detail-value" id="green-vehicle-name"></div>
+                    <div class="detail-label">Duration (min):</div>
+                    <div class="detail-value" id="green-duration"></div>
+                    <div class="detail-label">Times Used:</div>
+                    <div class="detail-value" id="green-times-used"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="transport.js"></script>
+</body>
+</html>

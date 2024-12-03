@@ -20,15 +20,6 @@ header {
   position: relative;
 }
 
-.back-button {
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
-}
-
 .layout {
 display: flex;
 flex-direction: column;  /* Imposta la direzione del layout da orizzontale a verticale */
