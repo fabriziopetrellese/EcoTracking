@@ -13,7 +13,31 @@ body {
     color: #fff;
     padding: 10px 0;
     border-radius: 10px;
+    display: flex;
+    justify-content: space-between; /* Allinea il titolo e l'icona ai lati opposti */
+    align-items: center;
   }
+
+  .spacer {
+    flex: 1; /* Assegna un peso flessibile per mantenere il titolo al centro */
+}
+
+h1 {
+    flex: 2; /* Assicura che il titolo abbia abbastanza spazio per centrarsi */
+    margin: 0; /* Rimuove margini per evitare spostamenti */
+    text-align: center;
+}
+
+  .profile-icon {
+    flex: 1;
+    font-size: 35px; /* Regola la dimensione dell'emoji o dell'icona */
+    color: #fff; /* Colore dell'icona */
+    text-decoration: none; /* Rimuove il sottolineamento del link */
+    padding: 10px; /* Spazio intorno all'icona per facilitare il clic */
+    text-align: right;
+    position: relative;
+    right: 40px;
+}
   
   .cards {
     display: flex;
@@ -177,9 +201,3 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-
-
-
-
-  

@@ -14,9 +14,9 @@ document.getElementById('transportForm').addEventListener('submit', function(eve
     if (classicVehicle !== "" && (duration <= 0 || timesUsed <= 0)) {
         alert("Please complete all fields for Classic Vehicle.");
     } else if (classicVehicle !== "" && duration > 0 && timesUsed > 0) {
-        let classicDetails = document.createElement('p');
-        classicDetails.textContent = `${classicVehicle} - Duration: ${duration} min - Times Used: ${timesUsed}`;
-        document.getElementById('classic-transport').appendChild(classicDetails);
+        document.getElementById('classic-vehicle-name').textContent = classicVehicle;
+        document.getElementById('classic-duration').textContent = `${duration} min`;
+        document.getElementById('classic-times-used').textContent = timesUsed;
         document.getElementById('transportForm').reset();
     }
 
@@ -24,9 +24,9 @@ document.getElementById('transportForm').addEventListener('submit', function(eve
     if (greenVehicle !== "" && (durationGreen <= 0 || timesUsedGreen <= 0)) {
         alert("Please complete all fields for Green Vehicle.");
     } else if (greenVehicle !== "" && durationGreen > 0 && timesUsedGreen > 0) {
-        let greenDetails = document.createElement('p');
-        greenDetails.textContent = `${greenVehicle} - Duration: ${durationGreen} min - Times Used: ${timesUsedGreen}`;
-        document.getElementById('green-transport').appendChild(greenDetails);
+        document.getElementById('green-vehicle-name').textContent = greenVehicle;
+        document.getElementById('green-duration').textContent = `${durationGreen} min`;
+        document.getElementById('green-times-used').textContent = timesUsedGreen;
         document.getElementById('transportForm').reset();
     }
 

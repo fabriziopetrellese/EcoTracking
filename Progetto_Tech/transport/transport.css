@@ -174,20 +174,36 @@ select:invalid {
 /* dettagli veicoli inseriti*/
 .vehicle-details {
     background-color: #E8F2EC; /* Colore di sfondo */
+    width: 200px;
+    max-width: 210px;
+    height: 72px;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     margin-top: 10px;
 }
 
+.detail-group {
+    display: flex; /* Imposta il layout flessibile */
+    justify-content: flex-start; /* Distanzia le etichette dai valori */
+    align-items: center; /* Allinea verticalmente al centro */
+    margin-bottom: 10px; /* Distanza tra le righe */
+    width: 100%;
+}
+
+.detail-label, .detail-value {
+    margin-right: 10px; /* Aggiunge spazio a destra di ogni etichetta e valore */
+}
+
+/* etichette used today*/
 .detail-label {
     font-weight: bold;
     color: #333;
     margin-top: 5px;
+    width: 30%;
 }
 
 .detail-value {
-    color: #666;
-    margin-bottom: 10px;
-    padding-left: 20px;
+    flex-grow: 1; /* Permette al valore di espandersi e riempire lo spazio rimanente */
+    text-align: left;
 }

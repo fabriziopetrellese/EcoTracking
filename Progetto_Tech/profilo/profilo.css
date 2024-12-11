@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color:#ededed;
+    color: #333;
+  }
+
+  
+/* Dashboard per mantenere il contenuto strutturato */
+.dashboard {
+  max-width: 1370px;
+  margin: auto;
+  padding: 20px;
+}
+  
+  
+header {
+  text-align: center;
+  background-color:#4A7352;
+  color: #fff;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+
+
+.eco-points {
+  font-weight: bold;
+  color: #fff; /* Assicurati che il colore del testo sia visibile sullo sfondo */
+  font-size: 35px; /* Dimensione del font per i punti eco */
+  padding: 10px 0; /* Padding per spaziatura verticale */
+  text-align: center; /* Allinea il testo al centro */
+}
+  
+  
+.card {
+  flex: 1;
+  background: #E8F2EC;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  flex-direction: column; /* Organizza i figli verticalmente */
+  align-items: center; /* Allinea centralmente gli elementi */
+}
+
+
+/* etichette foods, transport, energy */
+.label {
+  font-size: 40px; /* Dimensione del testo per le etichette */
+  color: #000000; /* Colore del testo */
+  padding: 10px; /* Padding per un po' di spazio intorno al testo */
+  width: 100%; /* Assicura che occupino tutta la larghezza della card */
+  text-align: center; /* Allinea il testo al centro */
+  margin-bottom: 7px;
+}
+
+
+/* toglie lo spazio verticale dall'ultima etichetta*/
+.label:last-child {
+  margin-bottom: 0; /* Rimuove il margine dall'ultima etichetta per evitare spazio extra al fondo */
+}
+
+
+.food-images {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Crea 6 colonne */
+  grid-template-rows: repeat(5, auto); /* Crea 5 righe, altezza automatica basata sul contenuto */
+  gap: 50px; /* Distanza tra le immagini */
+}
+
+
+.food-images img {
+  width: 150px; /* Assicura che le immagini riempiano la colonna */
+  height: 150px; /* Mantiene l'aspetto delle immagini */
+}
