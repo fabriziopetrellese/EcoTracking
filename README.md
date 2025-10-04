@@ -10,8 +10,8 @@ Antonio Christian Bizzarro: 0124002725
 ## Proposal
 [Visualizza il PDF](https://drive.google.com/file/d/15vUrHam6YBcHJuG8M-_3yi36hiSvOeEr/view?usp=share_link)
 
-## Table of contents
-* [campo1](#general-info)
-* [campo2](#explanation)
-* [campo3](#project-status)
-* [campo4](#contacts)
+## Added Backend
+- registrazione, con controllo utente se già registrato nel db o meno, password hashata
+- login
+- recupero password, con controllo mail presente nel database e otp da inserire(simulato, non arriva la mail)
+- aggiunto un sistema di feedback/recensioni
