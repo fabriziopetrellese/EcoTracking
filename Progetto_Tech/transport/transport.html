@@ -2,20 +2,25 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>EcoTracking Transport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTracking - Transport</title>
     <link rel="stylesheet" href="transport.css">
+   
 </head>
 <body>
     <div class="container">
 
-        <header>
-            <h1>Transport</h1>
-        </header>
+
+
+        <div class="left-content">
+            <header>
+               <h1>Transport</h1>
+            </header>
 
         <div class="form-container">
             <form id="transportForm">
-                
                 <div class="cards-container">
+                    <!-- Classic Vehicle -->
                     <div class="form-treInput">
                         <label for="classicVehicle">Classic vehicle:</label>
                         <select id="classicVehicle" name="classicVehicle">
@@ -30,13 +35,14 @@
                             <option value="Boat">Boat</option>
                         </select>
 
-                        <label for="duration">Duration(min):</label>
+                        <label for="duration">Duration (min):</label>
                         <input type="number" id="duration" name="duration" min="1">
 
                         <label for="timesUsed">Times used:</label>
                         <input type="number" id="timesUsed" name="timesUsed" min="1">
                     </div>
 
+                    <!-- Green Vehicle -->
                     <div class="green-vehicle">
                         <label for="greenVehicle">Green vehicle:</label>
                         <select id="greenVehicle" name="greenVehicle">
@@ -48,7 +54,7 @@
                             <option value="Electric scooter">Electric scooter</option>
                         </select>
 
-                        <label for="durationGreen">Duration(min):</label>
+                        <label for="durationGreen">Duration (min):</label>
                         <input type="number" id="durationGreen" name="durationGreen" min="1">
 
                         <label for="timesUsedGreen">Times used:</label>
@@ -60,45 +66,78 @@
             </form>
         </div>
 
+        <!-- Used Today Section -->
         <h2>Used today</h2>
-        <div class="daily-transport">
-            <div id="classic-transport">
-                <h3>Classic vehicle:</h3>
-                <div class="vehicle-details">
-                    <div class="detail-group">
-                        <div class="detail-label">Vehicle:</div>
-                        <div class="detail-value" id="classic-vehicle-name"></div>
-                    </div>
-                    <div class="detail-group">
-                        <div class="detail-label">Duration (min):</div>
-                        <div class="detail-value" id="classic-duration"></div>
-                    </div>
-                    <div class="detail-group">
-                        <div class="detail-label">Times Used:</div>
-                        <div class="detail-value" id="classic-times-used"></div>
-                    </div>
-                </div>
+        <div class="table-container">
+         
+            <!-- Classic Vehicle Table -->
+            <div class="table-wrapper">
+                <h3>Classic Vehicles</h3>
+                <table class="vehicle-table">
+                    <thead>
+                        <tr>
+                            <th> </th> 
+                            <th>Vehicle</th>
+                            <th>Duration (min)</th>
+                            <th>Times Used</th>
+                        </tr>
+                    </thead>
+                    <tbody id="classicVehicleTableBody">
+                        <!-- Le righe dei veicoli classici saranno aggiunte dinamicamente qui -->
+                    </tbody>
+                </table>
             </div>
-            <div id="green-transport">
-                <h3>Green vehicle:</h3>
-                <div class="vehicle-details">
-                    <div class="detail-group">
-                        <div class="detail-label">Vehicle:</div>
-                        <div class="detail-value" id="green-vehicle-name"></div>
-                    </div>
-                    <div class="detail-group">
-                        <div class="detail-label">Duration (min):</div>
-                        <div class="detail-value" id="green-duration"></div>
-                    </div>
-                    <div class="detail-group">
-                        <div class="detail-label">Times Used:</div>
-                        <div class="detail-value" id="green-times-used"></div>
-                    </div>
-                </div>
+
+            <!-- Green Vehicle Table -->
+            <div class="table-wrapper">
+                <h3>Green Vehicles</h3>
+                <table class="vehicle-table">
+                    <thead>
+                        <tr>
+                            <th> </th> 
+                            <th>Vehicle</th>
+                            <th>Duration (min)</th>
+                            <th>Times Used</th>
+                        </tr>
+                    </thead>
+                    <tbody id="greenVehicleTableBody">
+                        <!-- Le righe dei veicoli green saranno aggiunte dinamicamente qui -->
+                    </tbody>
+                </table>
             </div>
         </div>
 
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="right-content">
+            <h3 class="impact-title">Your Impact</h3>
+            <div class="circular-chart">
+                <div class="circle"></div>
+                <div class="inset">
+                    <span class="percentage">0%</span>
+                </div>
+            </div>
+  
+
+            <div class="hSeparator"></div>
+
+            <div class="weekly-insights">
+                <h3 class="insights-title">Last week</h3>
+                <canvas id="weeklyChart" width="100" height="100"></canvas>
+            </div>
+        </div>
+
+
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="transport.js"></script>
 </body>
 </html>
+
+
+
+
+

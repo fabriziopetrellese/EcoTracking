@@ -4,15 +4,17 @@ body, html {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff; /* Colore di sfondo generale */
+    background-color: #EAF2EC; /* Colore di sfondo generale */
 }
 
 
 .container {
-    width: 80%;
+    width: 100%;
     margin: 20px auto;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
+    display: flex;
+    box-sizing: border-box;
 }
 
 /* Titolo*/
@@ -24,7 +26,7 @@ header h1 {
 
 /* card grigia */
 .form-container {
-    background-color: #f5f5f5;
+    background-color: #EAF2EC;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
@@ -78,7 +80,7 @@ label {
     margin: auto; /* Imposta il colore del testo a rosso */
 }
 
-/* Card daily transport */
+/* Card gray used today */
 .daily-transport {
     display: flex; /* Imposta il contenitore a flex per allineare i figli orizzontalmente */
     justify-content: space-around; /* Distanzia uniformemente i figli all'interno del contenitore */
@@ -90,10 +92,15 @@ label {
     margin-top: 20px; /* Margine superiore per distanziare dalla sezione precedente */
 }
 
+
 h2 {
     color: #000000; /* Colore scuro per il titolo della sezione */
     text-align: center; /* Allinea al centro il titolo */
     margin-top: 0;  /* Riduce il margine superiore per il titolo */
+}
+
+h3 {
+    text-align: center; /* Allinea al centro il titolo */
 }
 
 
@@ -138,7 +145,7 @@ button:hover {
 
 /* modifica tutta la card sinistra (con il contenuto) */
 .form-treInput {
-    background-color: #E8F2EC;
+    background-color: #f9f9f9;
     border-radius: 10px;
     width: 50%;
     padding: 20px;
@@ -154,12 +161,13 @@ input, select, label {
 
 /* modifica tutta la card destra (con il contenuto) */
 .green-vehicle {
-    background-color: #E8F2EC;
+    background-color: #f9f9f9;
     border-radius: 10px;
     width: 50%;
     padding: 20px;
     box-sizing: border-box;
 }
+
 
 /* Stile per l'opzione di default nei menu a tendina */
 select option[disabled] {
@@ -171,39 +179,292 @@ select:invalid {
     color: gray;
 }
 
-/* dettagli veicoli inseriti*/
+
+/* card verde classic vehicle*/
 .vehicle-details {
+    display: flex; /* Imposta il layout flessibile */
+    flex-direction: row;
     background-color: #E8F2EC; /* Colore di sfondo */
-    width: 200px;
-    max-width: 210px;
-    height: 72px;
+    width: 100%;
+    max-width: 521px;
+    height: 120px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
-    margin-top: 10px;
+    padding-left: 8px;
+    margin-top: 13.8px;
+    box-sizing: border-box;
+}
+
+
+.green-details{
+    display: flex; /* Imposta il layout flessibile */
+    flex-direction: row;
+    background-color: #E8F2EC; /* Colore di sfondo */
+    width: 100%;
+    max-width: 521px;
+    height: 120px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px; /* Ridotto da 30px a 10px per meno spazio interno */
+    margin-top: -5px; /* Ridotto da 10px per ridurre lo spazio sopra la card */
+    box-sizing: border-box;
 }
 
 .detail-group {
     display: flex; /* Imposta il layout flessibile */
-    justify-content: flex-start; /* Distanzia le etichette dai valori */
-    align-items: center; /* Allinea verticalmente al centro */
+   flex-direction: column; /* Distanzia le etichette dai valori */
+    align-items: flex-start; /* Allinea verticalmente al centro */
     margin-bottom: 10px; /* Distanza tra le righe */
     width: 100%;
 }
 
 .detail-label, .detail-value {
-    margin-right: 10px; /* Aggiunge spazio a destra di ogni etichetta e valore */
+    margin-right: 41.5px; /* Aggiunge spazio a destra di ogni etichetta e valore */
+    margin-left: 41.5px;
+    width: 100%;
+    margin-bottom: 10px;
 }
+
 
 /* etichette used today*/
 .detail-label {
+    
+    font-weight: bold;
+    color: #000000;
+    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.detail-value {
+    flex-basis: 70%;
+    text-align: left;
+}
+.times-used-label, .times-used-value {
+    flex-basis: 20%; /* Assegna meno spazio per "Times" */
+}
+
+.times-used {
+    
+    display: flex;
+    width: 100%; /* Usa tutta la larghezza disponibile per questo gruppo */
+}
+
+.used-label {
+    flex-basis: 50%; /* Metà dello spazio disponibile per "Used" */
+    text-align: right; /* Allinea il testo a destra */
+}
+.vehicle-table {
+    width: 100%;
+    padding-right: 5px;
+}
+
+.vehicle-table th, .vehicle-table td {
+   
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  
+}
+
+.vehicle-table th {
+    background-color: #357d4a;
+    color: white;
+    border-radius: 5px;
+}
+
+.vehicle-table th:first-child {
+    background-color: transparent; /* Rimuove il colore verde */
+    border: none; /* Rimuove il bordo */
+    
+
+}
+
+.vehicle-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+    
+}
+
+
+
+
+.table-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.table-container .table-wrapper {
+    flex: 1;
+}
+
+
+h3 {
+    text-align: center;
+    margin-bottom: 5px; /* Ridotto per diminuire lo spazio sotto il titolo */
+    font-weight: bold; /* Per enfatizzare le scritte */
+}
+
+.table-wrapper h3 {
+    display: flex;
+    justify-content: center;
+}
+
+.vehicle-row {
+    display: flex; /* Disposizione flessibile per allineare il bottone e il testo */
+    align-items: center; /* Centra verticalmente gli elementi */
+    gap: 10px; /* Spazio tra il bottone e il testo */
+}
+
+.vehicle-text {
+    flex: 1; /* Lascia che il testo occupi il restante spazio */
+    text-align: left; /* Allinea il testo a sinistra */
+}
+.row-container {
+    display: flex; /* Allinea il bottone e la riga orizzontalmente */
+    align-items: center; /* Centra verticalmente il contenuto */
+    margin-bottom: 5px; /* Spazio tra le righe */
+}
+
+
+.row-container table {
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+.table-wrapper {
+    position: relative; /* Aggiungi un contesto per il posizionamento assoluto */
+    margin-left: 40px; /* Spazio per il bottone a sinistra */
+}
+
+
+
+.remove-button {
+    display: inline-flex; /* Usa inline-flex per un migliore controllo dell'allineamento */
+    align-items: center; /* Centra il contenuto verticalmente */
+    justify-content: center; /* Centra il contenuto orizzontalmente */
+    width: 18px; /* Larghezza fissa */
+    height: 18px; /* Altezza fissa */
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 50%; /* Rende il bordo completamente rotondo */
+    cursor: pointer;
+    padding: 0; /* Nessun padding per non spostare il testo */
+    margin-top: 12px;
+    margin-right: -3px; /* Agiuusta il margine per posizionare il bottone come desiderato */
+    font-size: 16px; /* Ajusta la dimensione del font per assicurarti che il simbolo si adatti bene */
+    
+  }
+  
+  .remove-button:hover {
+    background-color: darkred;
+  }
+
+
+.left-content {
+    flex: 8; /* Occupa più spazio rispetto alla parte destra */
+}
+
+
+.separator {
+    width: 3px;
+    height: 650px;
+    background-color: #ffffff;
+}
+
+/* Stile per la parte destra */
+.right-content {
+    flex: 2; /* Occupa meno spazio rispetto alla sinistra */
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.impact-title {
+    text-align: center;
+    font-size: 24px;
     font-weight: bold;
     color: #333;
     margin-top: 5px;
-    width: 30%;
-}
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
 
-.detail-value {
-    flex-grow: 1; /* Permette al valore di espandersi e riempire lo spazio rimanente */
-    text-align: left;
-}
+.hSeparator {
+    width: 100%;
+    background-color: #ffffff;
+    height: 3.5px;
+  }
+
+
+/* progress circle */
+.circular-chart {
+    border: 1px solid #ccc;
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: conic-gradient(#4aa463 0%, #ffffff 0% 100%);
+    margin: 10px 30px 30px 55px;
+    border-radius: 50%;
+  }
+  
+  .circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#4aa463 0%, #ffffff 0% 100%);
+  }
+  
+  
+  /*cerchio interno*/
+  .inset {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    margin: 20px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+  
+  
+  /*percentuale interna*/
+  .percentage {
+    font-size: 3em;
+    color: #666;
+  }
+  
+  
+  .weekly-insights {
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .insights-title {
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: -10px;
+    color: #333;
+  }

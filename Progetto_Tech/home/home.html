@@ -11,39 +11,43 @@
     <header>
       <div class="spacer"></div>
       <h1>EcoTracking</h1>
-      <a href="../profilo/profilo.html" class="profile-icon">👤</a>
+      <div class="avatar-icon">
+        <a href="../profilo/profilo.html">
+        <img src="../images/user.png" alt="profile-icon">
+        </a>
+      </div>
     </header>
       <div class="card">
         <h1>Your Energy Impact:</h1>
+
         <div class="chart">
-   
-          <div class="circle" data-percent="0">
-            <span>0%</span>
-          </div>
+            <div class="circle" data-percent="0">
+              <span>0%</span>
+            </div>
         </div>
         <div class="stats">
           <h1> Your Habits: </h1>
-          <div class="stats">
-          
-           
-            <button class="emoji-button" onclick="location.href='../foods/food.html'">🍎</button>
-            <button class="emoji-button" onclick="location.href='../transport/transport.html'">🚈</button>
-            <button class="emoji-button" onclick="location.href='../consumption/energy.html'">💡</button>
 
-</div>
-        </div> <h2> Daily Challenges: </h2>
+          <div class="stats-buttons">
+            <button class="emoji-button" onclick="location.href='../foods/food.html'">🍎</button>
+            <button class="emoji-button" onclick="location.href='../transport/transport.html'">🚕</button>
+            <button class="emoji-button" onclick="location.href='../consumption/energy.html'">💡</button>
+          </div>
+
+        </div>
+        <h2> Daily Challenges: </h2>
     
         <h4>
           <a >🍎</a>
-          <a href="../daily_challenge_(food)/challenge_f.html" class="link-text">Sfida del giorno</a>
+          <a href="../daily_challenge_(food)/challenge_f.html" class="link-text">Food challenges</a>
           <label>
             <input type="checkbox" class="check-icon">
             <span class="custom-checkbox"></span>
           </label>
         </h4>
         <h4>
-          <a >🚈</a>
-          <a href="../daily_challenge_(transport)/challenge_t.html" class="link-text">Sfida del giorno</a>
+          <a >🚕</a>
+          <a href="../daily_challenge_(transport)/challenge_t.html" class="link-text">Transport challenges</a>
           <label>
             <input type="checkbox" class="check-icon">
             <span class="custom-checkbox"></span>
@@ -51,16 +55,23 @@
         </h4>
         <h4>
           <a >💡</a>
-          <a href="../daily_challenge_(energy)/challenge_e.html" class="link-text">Sfida del giorno</a>
+          <a href="../daily_challenge_(energy)/challenge_e.html" class="link-text">Energy challenges</a>
           <label>
             <input type="checkbox" class="check-icon">
             <span class="custom-checkbox"></span>
           </label>
         </h4>
         
-
-</div>
+        <div class="feedback-button-container">
+          <button class="feedback-btn" onclick="location.href='../feedbacks/feedbacks.html'">
+          💬 Feedbacks
+          </button>
+        </div>
+      </div>
     </section>
   </div>
+<script src="../shared/global.js"></script>
+<script src="home.js"></script>
+
 </body>
 </html>

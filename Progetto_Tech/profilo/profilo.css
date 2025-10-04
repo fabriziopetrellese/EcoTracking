@@ -12,6 +12,26 @@ body {
   margin: auto;
   padding: 20px;
 }
+
+/* inserimento nome utente */
+#nameInput {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  background: none;
+  border: none;
+  text-align: center;
+  width: 100%;
+}
+
+#nameInput:focus {
+  outline: none;
+}
+
+#nameInput::placeholder { /* Standard modern browsers */
+  color: white;
+  opacity: 0.5;
+}
   
   
 header {
@@ -26,7 +46,7 @@ header {
 .eco-points {
   font-weight: bold;
   color: #fff; /* Assicurati che il colore del testo sia visibile sullo sfondo */
-  font-size: 35px; /* Dimensione del font per i punti eco */
+  font-size: 28px; /* Dimensione del font per i punti eco */
   padding: 10px 0; /* Padding per spaziatura verticale */
   text-align: center; /* Allinea il testo al centro */
 }
@@ -50,7 +70,7 @@ header {
 
 /* etichette foods, transport, energy */
 .label {
-  font-size: 40px; /* Dimensione del testo per le etichette */
+  font-size: 33px; /* Dimensione del testo per le etichette */
   color: #000000; /* Colore del testo */
   padding: 10px; /* Padding per un po' di spazio intorno al testo */
   width: 100%; /* Assicura che occupino tutta la larghezza della card */
@@ -77,3 +97,87 @@ header {
   width: 150px; /* Assicura che le immagini riempiano la colonna */
   height: 150px; /* Mantiene l'aspetto delle immagini */
 }
+
+
+/* privacy policy */
+.privacy-notice {
+  background-color: #f2f2f2;
+  border: 0.8px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 1330px;
+  margin: auto;
+  margin-top: -14px;
+}
+
+.privacy-notice h2 {
+  color: #333;
+}
+
+.privacy-notice p {
+  color: #666;
+}
+
+
+/* Luccichio intorno alla medaglietta */
+.highlight-medal {
+  position: relative; /* Necessario per il contenitore del luccichio */
+  animation: popEffect 1s ease-in-out, sparkleEffect 2s infinite;
+}
+
+/* Effetto pop */
+@keyframes popEffect {
+  0% {
+      transform: scale(1);
+      opacity: 0.8;
+  }
+  50% {
+      transform: scale(1.8);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 0.8;
+  }
+}
+
+/* Effetto luccichio */
+@keyframes sparkleEffect {
+  0%, 100% {
+      box-shadow: 0 0 10px 5px rgba(255, 223, 0, 0.5), 
+                  0 0 20px 10px rgba(255, 223, 0, 0.3),
+                  0 0 30px 15px rgba(255, 223, 0, 0.1);
+  }
+  50% {
+      box-shadow: 0 0 15px 8px rgba(255, 223, 0, 0.7), 
+                  0 0 25px 15px rgba(255, 223, 0, 0.5),
+                  0 0 35px 20px rgba(255, 223, 0, 0.3);
+  }
+}
+
+/* Aggiunge un alone brillante */
+.highlight-medal::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 223, 0, 0.5), rgba(255, 223, 0, 0));
+  z-index: -1;
+  animation: glowEffect 2s infinite;
+}
+
+/* Effetto alone */
+@keyframes glowEffect {
+  0%, 100% {
+      transform: scale(1);
+      opacity: 0.8;
+  }
+  50% {
+      transform: scale(1.3);
+      opacity: 1;
+  }
+}
+

@@ -1,6 +1,7 @@
 // Variabili per tracciare giorno ed efficienza
 let selectedDay = "Monday"; // Valore di default
 let selectedEfficiency = "A"; // Valore di default
+let totalPercentage = 0; // Percentuale totale accumulata
 
 // Aggiorna il valore delle ore selezionate
 function updateUsage(value) {
@@ -57,18 +58,75 @@ function selectEfficiency(classValue) {
 }
 
 
+const appliancesList = {
+  "fridge": 0.5,
+  "washing machine": 1.0,
+  "oven": 1.3,
+  "microwave": 1.0,
+  "heater": 1.3,
+  "air conditioner": 1.2,
+  "dishwasher": 1.0,
+  "television": 0.7,
+  "computer": 0.8,
+  "lamp": 0.3
+};
+
+// Funzione per calcolare l'incremento percentuale
+function calculateEnergy(appliance, usageHours) {
+  const baseEnergy = appliancesList[appliance] || 1.0; // Valore default se non trovato
+  const dayCost = selectedDay === "Saturday" ? 0.9 : selectedDay === "Sunday" ? 0.7 : 1.2;
+  const efficiencyMultiplier = { A: 0.3, B: 0.3, C: 0.4, D: 0.4, E: 0.6, F: 0.6 };
+  const efficiencyValue = efficiencyMultiplier[selectedEfficiency] || 1.0;
+
+  const energyUsed = baseEnergy * usageHours * dayCost * efficiencyValue;
+  const percentageIncrease = Math.min((energyUsed / 20) * 100, 100 - totalPercentage);
+  return percentageIncrease;
+}
+
+// Aggiorna il progresso sul grafico
+function updateProgress(increment) {
+  // Incrementa e limita la percentuale totale
+  totalPercentage = Math.min(totalPercentage + increment, 100);
+
+  console.log("Total Percentage:", parseFloat(Math.round(totalPercentage)));
+
+  // Seleziona il grafico e il testo della percentuale
+  const chart = document.querySelector('.circle');
+  const percentageText = document.querySelector('.percentage');
+
+
+  // Aggiorna il background dinamicamente usando conic-gradient
+  chart.style.background = `conic-gradient(#4aa463 ${totalPercentage}%, #fff ${totalPercentage}% 100%)`;
+
+  // Aggiorna il valore testuale della percentuale
+  percentageText.textContent = `${Math.round(totalPercentage)}%`;
+
+  const energyImpact = parseFloat(((totalPercentage / 100) * 25).toFixed(1));
+  localStorage.setItem("energyOverallImpact", energyImpact);
+
+  console.log("Energy Impact saved:", energyImpact);
+}
+
+
+
+
 // Aggiungi un nuovo elettrodomestico alla tabella
 function addAppliance() {
-  const applianceName = document.getElementById('appliance-name').value;
-  const usageHours = document.getElementById('usage-hours').value;
+  const applianceName = document.getElementById('appliance-name').value.trim().toLowerCase();
+  const usageHours = parseInt(document.getElementById('usage-hours').value);
 
-  if (applianceName && usageHours) {
-    const energyConsumption = (usageHours * 0.26).toFixed(2); // Calcolo ipotetico dell'energia
+  if (applianceName && usageHours > 0) {
+    const percentageIncrease = calculateEnergy(applianceName, usageHours);
 
-    // Colonne della tabella Overview
+    // Calcola consumo energetico
+    const energyConsumption = (percentageIncrease / 100 * 20).toFixed(2);
+
+    // Aggiunge la riga alla tabella Overview
     const table = document.getElementById('appliance-table');
     const newRow = table.insertRow();
+    const rowIndex = table.rows.length; // Indice della riga
     newRow.innerHTML = `
+    <td><button onclick="removeAppliance(${rowIndex})" class="remove-button">-</button></td>
       <td>${applianceName}</td>
       <td>${usageHours}</td>
       <td>${selectedDay}</td>
@@ -76,27 +134,86 @@ function addAppliance() {
       <td>${energyConsumption} kWh</td>
     `;
 
+    updateProgress(percentageIncrease); // Aggiorna grafico
+    saveApplianceData(applianceName, usageHours, selectedDay, selectedEfficiency, energyConsumption);
+
     // Resetta i campi
     document.getElementById('appliance-name').value = '';
     document.getElementById('usage-hours').value = 3;
     document.getElementById('hours-output').textContent = 3;
   } else {
-    /* Errore nel caso non inserisca il nome */
-    alert('Please enter appliance name and usage hours!');
+    alert('Please enter a valid appliance name and usage hours!');
   }
 }
 
 
+// Funzione per rimuovere un elettrodomestico
+function removeAppliance(index) {
+  const table = document.getElementById('appliance-table');
+  const savedData = JSON.parse(localStorage.getItem('applianceData')) || [];
 
+  // Rimuovi la riga dal localStorage
+  if (index >= 0 && index < savedData.length) {
+    const removedItem = savedData.splice(index, 1)[0];
+    localStorage.setItem('applianceData', JSON.stringify(savedData));
 
-function updateProgress(percentage) {
-  const chart = document.querySelector('.circular-chart');
-  chart.style.setProperty('--percent', `${percentage}%`);
+    // Aggiorna il progresso rimuovendo il consumo energetico dell'elemento rimosso
+    const energyRemoved = (parseFloat(removedItem.energy) / 20) * 100;
+    totalPercentage = Math.max(totalPercentage - energyRemoved, 0);
+    updateProgress(0); // Ricalcola il grafico con la nuova percentuale
+
+    loadAppliances();
+  }
 }
-// Esempio di utilizzo:
-//updateProgress(75);  Aggiorna con il 75%, o qualsiasi altra percentuale
+
+// Funzione per ricaricare la tabella dopo una rimozione
+function reloadTable() {
+  const table = document.getElementById('appliance-table');
+  table.innerHTML = ''; // Svuota la tabella
+  totalPercentage = 0; // Reset della percentuale
+  loadAppliances(); // Ricarica i dati salvati
+}
 
 
+// Caricare i dati dal localStorage all'avvio
+function loadAppliances() {
+  const savedData = JSON.parse(localStorage.getItem('applianceData')) || [];
+  const table = document.getElementById('appliance-table');
+  totalPercentage = 0; // Resetta la percentuale accumulata
+  table.innerHTML = ''; // Svuota la tabella
+
+  savedData.forEach((item, index) => {
+    const newRow = table.insertRow();
+    newRow.innerHTML = `
+      <td><button class="remove-button">-</button></td>
+      <td>${item.appliance}</td>
+      <td>${item.usageHours}</td>
+      <td>${item.day}</td>
+      <td>${item.efficiency}</td>
+      <td>${item.energy} kWh</td>
+    `;
+
+    // Associa l'evento onclick al pulsante, usando l'indice corrente
+    newRow.querySelector('.remove-button').addEventListener('click', () => {
+      removeAppliance(index);
+    });
+
+    updateProgress((item.energy / 20) * 100); // Aggiorna il grafico
+  });
+}
+
+// Salvare i dati nel localStorage
+function saveApplianceData(appliance, usageHours, day, efficiency, energy) {
+  const savedData = JSON.parse(localStorage.getItem('applianceData')) || [];
+  savedData.push({ appliance, usageHours, day, efficiency, energy });
+  localStorage.setItem('applianceData', JSON.stringify(savedData));
+}
+
+
+// Caricare i dati quando la pagina viene caricata
+document.addEventListener('DOMContentLoaded', () => {
+  loadAppliances();
+});
 
 
 
@@ -109,7 +226,7 @@ const weeklyChart = new Chart(ctx, {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], // Giorni della settimana
         datasets: [{
             label: '',
-            data: [2, 12, 5, 15, 17, 11, 14], // Dati di esempio
+            data: [7, 3, 5, 5, 9, 1, 7], // Dati di esempio
             borderColor: '#4aa463', // Colore della linea
             backgroundColor: 'rgba(74, 164, 99, 0.2)', // Colore di riempimento
             borderWidth: 2, // Spessore della linea

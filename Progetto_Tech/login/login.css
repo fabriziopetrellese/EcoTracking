@@ -1,0 +1,88 @@
+/* Reset base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Sfondo */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f4f8; /* colore chiaro e pulito */
+}
+
+/* Container centrale */
+.container {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+}
+
+/* Titolo */
+h2 {
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+/* Input */
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+    border-color: #4caf50; /* verde leggero quando selezionato */
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+/* Bottone */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4caf50;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Messaggi di errore / successo */
+#message {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #e53935; /* rosso per errore */
+}
+
+#message.success {
+    color: #4caf50; /* verde per successo */
+}
+
+#forgot-password-link {
+    color: #2e7d32; /* verde scuro */
+    text-decoration: none; /* rimuove la sottolineatura, opzionale */
+}
+
+#forgot-password-link:hover {
+    color: #145418; /* verde ancora più scuro al passaggio del mouse */
+    text-decoration: underline; /* opzionale, per effetto hover */
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Daily Challenge Energy:</title>
+    <title>Energy daily challenges</title>
     <link rel="stylesheet" href="challenge_e.css">
    
 <body>
@@ -12,7 +12,7 @@
         <div class="dashboard">
         <header>
             
-            <h1>Daily Challenge Energy:</h1>
+            <h1>Energy daily challenges</h1>
             <h3>Migliora le tue scelte nei consumi energetici giornalieri e riduci il tuo impatto ambientale completando le seguenti sfide:<h3>
         </header>
     <div class="card1">
@@ -21,30 +21,32 @@
  
 <ul>
     <li>
-        <input type="checkbox" id="challenge1" class="checkbox">
-        <label for="challenge1">Sostituisci i vecchi elettrodomestici con modelli più efficienti dal punto di vista energetico, preferibilmente con etichetta ENERGY STAR.</label>
+        <input type="checkbox" id="challenge1" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge1">Replace old appliances with more energy-efficient models, preferably ENERGY STAR</label>
     </li>
     <li>
-        <input type="checkbox" id="challenge2" class="checkbox">
-        <label for="challenge2">Stacca gli elettrodomestici e i caricabatterie quando non sono in uso per evitare il consumo di energia in standby..</label>
+        <input type="checkbox" id="challenge2" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge2">Disconnect appliances and chargers when not in use to avoid standby power consumption</label>
     </li>
     <li>
-        <input type="checkbox" id="challenge3" class="checkbox">
-        <label for="challenge3">Sostituisci le lampadine incandescenti con lampadine LED, che consumano fino all'80% in meno di energia e durano molto più a lungo.</label>
+        <input type="checkbox" id="challenge3" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge3">Replace incandescent bulbs with LED bulbs, which consume up to 80% less energy and last much longer</label>
     </li>
     <li>
-        <input type="checkbox" id="challenge4" class="checkbox">
-        <label for="challenge4">Utilizza la luce naturale il più possibile e spegni le luci quando lasci una stanza.</label>
+        <input type="checkbox" id="challenge4" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge4">Use natural light as much as possible and turn off the lights when you leave a room</label>
     </li>
     <li>
-        <input type="checkbox" id="challenge5" class="checkbox">
-        <label for="challenge5">Evita di sostituire frequentemente dispositivi elettronici come smartphone e computer. Utilizzali per quanto più tempo possibile prima di sostituirli.
+        <input type="checkbox" id="challenge5" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge5">Avoid replacing electronic devices such as smartphones and computers frequently. Use them for as long as possible before replacing them</label>
     
 </ul>
 
         </ul>
     </div>
-</div> 
-    <script src="challenge_e.js"></script>
+</div>
+
+<script src="../shared/global.js"></script>
+<script src="challenge_e.js"></script>
 </body>
 </html>

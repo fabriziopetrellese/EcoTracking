@@ -5,8 +5,6 @@ body {
     color: #333;
   }
   
-  
-  
   header {
     text-align: center;
     background-color:#4A7352;
@@ -14,7 +12,7 @@ body {
     padding: 10px 0;
     border-radius: 10px;
     display: flex;
-    justify-content: space-between; /* Allinea il titolo e l'icona ai lati opposti */
+    justify-content: center; /* Allinea il titolo e l'icona ai lati opposti */
     align-items: center;
   }
 
@@ -23,20 +21,9 @@ body {
 }
 
 h1 {
-    flex: 2; /* Assicura che il titolo abbia abbastanza spazio per centrarsi */
+    flex: 25; /* modifica la posizione del titolo */
     margin: 0; /* Rimuove margini per evitare spostamenti */
     text-align: center;
-}
-
-  .profile-icon {
-    flex: 1;
-    font-size: 35px; /* Regola la dimensione dell'emoji o dell'icona */
-    color: #fff; /* Colore dell'icona */
-    text-decoration: none; /* Rimuove il sottolineamento del link */
-    padding: 10px; /* Spazio intorno all'icona per facilitare il clic */
-    text-align: right;
-    position: relative;
-    right: 40px;
 }
   
   .cards {
@@ -45,42 +32,43 @@ h1 {
     margin-top: 20px;
   }
   
-  .card {
-    flex: 1;
-    background: #E8F2EC;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-  }
+.card {
+  flex: 1;
+  background: #E8F2EC;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
   
 .chart {
   position: relative;
   margin: 30px auto;
-  width: 150px;
-  height: 150px;
+  width: 183px;
+  height: 183px;
   border-radius: 50%;
   background: conic-gradient(#ccc 0% 100%);
-  display: flex; /* Centra il contenuto */
+  display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Ombra leggera per profondità */
 }
   
   .chart .circle {
-    position: relative; /* Cambia 'absolute' con 'relative' */
+    position: relative;
     top: 0;
     left: 0;
     margin: auto;
-    width: 130px; /* Stessa dimensione della classe .chart */
-    height: 130px;
-    background-color: #f9f9f9; /* Colore facilmente distinguibile */
+    width: 160px;
+    height: 160px;
+    background-color: #f9f9f9;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
     font-weight: bold;
-    color: black; /* Testo visibile */
+    color: black;
   }
   
   .stats button {
@@ -200,4 +188,34 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.avatar-icon img {
+  margin-right: 15px;
+  width: 33px; /* Assicura che le immagini riempiano la colonna */
+  height: 33px; /* Mantiene l'aspetto delle immagini */
+}
+
+.feedback-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 90px;
+  margin-bottom: 20px;
+}
+
+.feedback-btn {
+  background-color: #2e7d32; /* verde sostenibile */
+  color: white;
+  font-size: 18px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.feedback-btn:hover {
+  background-color: #43a047;
+  transform: scale(1.05);
 }

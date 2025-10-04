@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Daily Challenge Food:</title>
+    <title>Food daily challenges</title>
     <link rel="stylesheet" href="challenge_f.css">
    
 <body>
@@ -12,8 +12,8 @@
         <div class="dashboard">
         <header>
             
-            <h1>Daily Challenge Food:</h1>
-            <h3>Migliora le tue abitudini alimentari e riduci il tuo impatto ambientale completando le seguenti sfide:<h3>
+            <h1>Food daily challenges</h1>
+            <h3>Improve your eating habits and reduce your environmental impact by completing the following challenges<h3>
         </header>
     <div class="card1">
         <ul id="challengeList">
@@ -21,46 +21,48 @@
  
 <ul>
     <li>
-        <input type="checkbox" id="challenge1" class="checkbox">
-        <label for="challenge1">Evitare prodotti confezionati in plastica</label>
+        <input type="checkbox" id="challenge1" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge1">Avoid plastic-packeged products</label>
     </li>
     <li>
-        <input type="checkbox" id="challenge2" class="checkbox">
-        <label for="challenge2">Usare sacchetti riutilizzabili per la spesa</label>
+        <input type="checkbox" id="challenge2" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge2">Use reusable shopping bags</label>
     </li>
     <li>
-        <input type="checkbox" id="challenge3" class="checkbox">
-        <label for="challenge3">Comprare prodotti locali</label>
+        <input type="checkbox" id="challenge3" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge3">Buy local products</label>
     </li>
     <li>
-        <input type="checkbox" id="challenge4" class="checkbox">
-        <label for="challenge4">Ridurre lo spreco di cibo</label>
+        <input type="checkbox" id="challenge4" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge4">Reduce food waste</label>
     </li>
     <li>
-        <input type="checkbox" id="challenge5" class="checkbox">
-        <label for="challenge5">Preparare una cena usando solo ingredienti biologici</label>
+        <input type="checkbox" id="challenge5" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge5">Prepare a dinner using only organic ingredients</label>
     </li>
     <li>
-        <input type="checkbox" id="challenge6" class="checkbox">
-        <label for="challenge6">Non consumare carne per un giorno</label>
+        <input type="checkbox" id="challenge6" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge6">Do not eat meat for a day</label>
     </li>
     <li>
-        <input type="checkbox" id="challenge7" class="checkbox">
-        <label for="challenge7">Scegliere frutta e verdura di stagione</label>
+        <input type="checkbox" id="challenge7" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge7">Choose seasonal fruits and vegetables</label>
     </li>
     <li>
-        <input type="checkbox" id="challenge8" class="checkbox">
-        <label for="challenge8">Evitare cibi e bevande in lattine o bottiglie di plastica</label>
+        <input type="checkbox" id="challenge8" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge8">Avoid food and drink in cans or plastic bottles</label>
     </li>
     <li>
-        <input type="checkbox" id="challenge9" class="checkbox">
-        <label for="challenge9">Prova una ricetta vegana</label>
+        <input type="checkbox" id="challenge9" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge9">Try a vegan recipe</label>
     </li>
 </ul>
 
         </ul>
     </div>
 </div> 
+
+    <script src="../shared/global.js"></script>
     <script src="challenge_f.js"></script>
 </body>
 </html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedbacks - EcoTracking</title>
+  <link rel="stylesheet" href="feedbacks.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Release a Feedback 🌿</h1>
+
+    <form id="feedbackForm">
+      <input type="text" id="title" placeholder="Title" required>
+      <textarea id="description" placeholder="Description" rows="4" required></textarea>
+
+      <!-- Stelle del form -->
+      <div class="stars" id="formStars">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+
+      <button type="submit">Send</button>
+    </form>
+
+    <h2>Stories from our users</h2>
+    <div id="feedbackList" class="feedback-list"></div>
+
+    <div id="message"></div>
+  </div>
+
+  <script src="feedbacks.js"></script>
+</body>
+</html>

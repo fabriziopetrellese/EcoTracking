@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Daily Challenge Transport:</title>
+    <title>Transport daily challenges</title>
     <link rel="stylesheet" href="challenge_t.css">
    
 <body>
@@ -12,7 +12,7 @@
         <div class="dashboard">
         <header>
             
-            <h1>Daily Challenge Transport:</h1>
+            <h1>Transport daily challenges</h1>
             <h3>Migliora le tue scelte negli spostamenti e riduci il tuo impatto ambientale completando le seguenti sfide:<h3>
         </header>
     <div class="card1">
@@ -21,31 +21,33 @@
  
 <ul>
     <li>
-        <input type="checkbox" id="challenge1" class="checkbox">
-        <label for="challenge1">Quando disponibile, scegli linee di autobus alimentate elettricamente per ridurre le emissioni di gas serra.</label>
+        <input type="checkbox" id="challenge1" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge1">When available, choose electrically powered bus lines to reduce greenhouse gas emissions</label>
     </li>
     <li>
-        <input type="checkbox" id="challenge2" class="checkbox">
-        <label for="challenge2"> Scegli il monopattino elettrico per spostamenti brevi, ideale per viaggi leggeri e rapidi in città.</label>
+        <input type="checkbox" id="challenge2" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge2">Choose the electric scooter for short trips, ideal for light and fast trips in the city</label>
     </li>
     <li>
-        <input type="checkbox" id="challenge3" class="checkbox">
-        <label for="challenge3">mpegnati a non usare l'auto per tutto il giorno, affidandoti completamente al trasporto pubblico o ad altre forme di mobilità sostenibile.</label>
+        <input type="checkbox" id="challenge3" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge3">Commit to not using the car all day, relying entirely on public transport or other forms of sustainable mobility</label>
     </li>
     <li>
-        <input type="checkbox" id="challenge4" class="checkbox">
-        <label for="challenge4">Organizza un sistema di carpooling con i colleghi o gli amici per ridurre il numero di veicoli sulla strada.</label>
+        <input type="checkbox" id="challenge4" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge4">Arrange a carpool system with colleagues or friends to reduce the number of vehicles on the road</label>
     </li>
     <li>
-        <input type="checkbox" id="challenge5" class="checkbox">
-        <label for="challenge5">Utilizza app di mobilità che offrono opzioni di percorso integrate con trasporti pubblici elettrici, biciclette e monopattini elettrici.</label>
+        <input type="checkbox" id="challenge5" class="checkbox" onchange="saveChallengeState(this)">
+        <label for="challenge5">Use mobility apps that offer route options integrated with electric public transport, bicycles and electric scooters</label>
     </li>
     
 </ul>
 
         </ul>
     </div>
-</div> 
-    <script src="challenge_t.js"></script>
+</div>
+
+<script src="../shared/global.js"></script>
+<script src="challenge_t.js"></script>
 </body>
 </html>

@@ -1,5 +1,10 @@
+Progetto_Tech/env/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
+*.pyc
+*.pyo
+Thumbs.db
 *.py[cod]
 *$py.class
 
@@ -162,3 +167,4 @@ cython_debug/
 #.idea/
 
 .DS_Store
+.venv/

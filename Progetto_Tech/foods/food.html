@@ -8,74 +8,93 @@
 </head>
 <body>
   <div class="dashboard">
-    <header>
-      <h1>Food Habits</h1>
-    </header>
+    <!-- Contenuto a sinistra -->
+    <div class="left-content">
+      <header>
+        <h1>Food Habits</h1>
+      </header>
 
-    <!-- Prima Card: Gestione dei pasti -->
-    <div class="card1">
-      <section class="section">
-        <h2>Add First Dish</h2>
-        <div class="add-foods-container">
-          <input type="text" placeholder="e.g., pasta" id="first-dish-input" class="input-field">
-          <button class="add-button" onclick="addFood('first')">+</button>
+      <!-- Prima Card: Gestione dei pasti -->
+      <div class="card1">
+        <section class="section">
+          <h2>Add First Dish</h2>
+          <div class="add-foods-container">
+            <input type="text" placeholder="e.g., pasta" id="first-dish-input" class="input-field">
+            <button class="add-button" onclick="addFood('first')">+</button>
+          </div>
+        </section>
+        <section class="section">
+          <h2>Add Second Dish</h2>
+          <div class="add-foods-container">
+            <input type="text" placeholder="e.g., steak" id="second-dish-input" class="input-field">
+            <button class="add-button" onclick="addFood('second')">+</button>
+          </div>
+        </section>
+        <section class="section">
+          <h2>Add Side Dish</h2>
+          <div class="add-foods-container">
+            <input type="text" placeholder="e.g., salad" id="side-dish-input" class="input-field">
+            <button class="add-button" onclick="addFood('side')">+</button>
+          </div>
+        </section>
+        <section class="section">
+          <h2>Add Dessert</h2>
+          <div class="add-foods-container">
+            <input type="text" placeholder="e.g., cake" id="dessert-dish-input" class="input-field">
+            <button class="add-button" onclick="addFood('dessert')">+</button>
+          </div>
+        </section>
+      </div>
+
+      <!-- Seconda Card: Daily Foods -->
+      <div class="card2">
+      
+        <h2>Daily Foods:</h2>
+        <div class="food-section" id="first-dish-section">
+          <h3>First Dish:</h3>
+          <ul></ul>
         </div>
-      </section>
-      <section class="section">
-        <h2>Add Second Dish</h2>
-        <div class="add-foods-container">
-          <input type="text" placeholder="e.g., steak" id="second-dish-input" class="input-field">
-          <button class="add-button" onclick="addFood('second')">+</button>
+        <div class="food-section" id="second-dish-section">
+          <h3>Second Dish:</h3>
+          <ul></ul>
         </div>
-      </section>
-      <section class="section">
-        <h2>Add Side Dish</h2>
-        <div class="add-foods-container">
-          <input type="text" placeholder="e.g., salad" id="side-dish-input" class="input-field">
-          <button class="add-button" onclick="addFood('side')">+</button>
+        <div class="food-section" id="side-dish-section">
+          <h3>Side Dish:</h3>
+          <ul></ul>
         </div>
-      </section>
-      <section class="section">
-        <h2>Add Dessert</h2>
-        <div class="add-foods-container">
-          <input type="text" placeholder="e.g., cake" id="dessert-dish-input" class="input-field">
-          <button class="add-button" onclick="addFood('dessert')">+</button>
+        <div class="food-section" id="dessert-dish-section">
+          <h3>Dessert:</h3>
+          <ul></ul>
         </div>
-      </section>
+      </div>
     </div>
 
-    <!-- Seconda Card: Daily Foods -->
-    <div class="card2">
-      <h2>Daily Foods:</h2>
-      <div class="food-section" id="first-dish-section">
-        <h3>First Dish:</h3>
-        <ul></ul>
+    <!-- Linea verticale e contenuto a destra -->
+    <div class="separator"></div>
+    <div class="right-content">
+      <h3 class="impact-title">Your Impact</h3>
+      <div class="circular-chart">
+        <div class="circle">
+          <div class="mask half" style="background-color: #4aa463;">
+            <div class="fill fix" style="background-color: #ffffff;"></div>
+          </div>
+          <div class="inset">
+            <div class="percentage">0%</div>
+          </div>
+        </div>
       </div>
-      <div class="food-section" id="second-dish-section">
-        <h3>Second Dish:</h3>
-        <ul></ul>
-      </div>
-      <div class="food-section" id="side-dish-section">
-        <h3>Side Dish:</h3>
-        <ul></ul>
-      </div>
-      <div class="food-section" id="dessert-section">
-        <h3>Dessert:</h3>
-        <ul></ul>
+
+      <div class="hSeparator"></div>
+
+      <div class="weekly-insights">
+        <h3 class="insights-title">Last week</h3>
+        <canvas id="weeklyChart" width="100" height="100"></canvas>
       </div>
     </div>
   </div>
+
+  <!-- Libreria JavaScript Chart.js per il grafico settimanale -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="food.js"></script>
 </body>
-
-
 </html>
-
-
-
-
-
-
-
-
-
